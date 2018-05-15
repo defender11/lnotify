@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>lnotify</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="jquery.lnotify.css">
+    </head>
+    <body>
+
+    <p><a href="javascript:void(0);" id="btn_text" style="color: black;">show text</a></p>
+
+    <p><a href="javascript:void(0);" id="btn_success" style="color: green;">show success</a></p>
+
+    <p><a href="javascript:void(0);" id="btn_error" style="color: red;">show error</a></p>
+
+        <script>
+            $(function () {
+                $.lNotify();
+
+                $('#btn_text').click(function () {
+                    $.lNotify('add', 'Просто текст написан', 'text');
+                });
+
+                $('#btn_success').click(function () {
+                    $.lNotify('add', 'Успешно сохранили', 'success');
+                });
+                $('#btn_error').click(function () {
+                    $.lNotify('add', 'Ошибка сохранения', 'error');
+                });
+            });
+        </script>
+        <script src="jquery.lnotify.js"></script>
+    </body>
+</html>
