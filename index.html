@@ -8,36 +8,40 @@
         <link rel="stylesheet" href="jquery.lnotify.css">
     </head>
     <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p><a href="javascript:void(0);" id="btn_text" style="color: black;">show text</a></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p><a href="javascript:void(0);" id="btn_text" style="color: black;">show text</a></p>
 
-    <p><a href="javascript:void(0);" id="btn_success" style="color: green;">show success</a></p>
+        <p><a href="javascript:void(0);" id="btn_success" style="color: green;">show success</a></p>
 
-    <p><a href="javascript:void(0);" id="btn_error" style="color: red;">show error</a></p>
+        <p><a href="javascript:void(0);" id="btn_error" style="color: red;">show error</a></p>
 
-        <script>
-            $(function () {
-                $.lNotify({
-                    interval: 4000,
-                    animation: 'slide',
-                    position: 'bottomRight'
-                });
-
-                $('#btn_text').click(function () {
-                    $.lNotify('add', 'Lorem Ipsum is simply dummy text of the printing and typesetting <b>Ipsum</b> industry. <a href="#">Lorem  has been the industry.</a>', 'text');
-                });
-
-                $('#btn_success').click(function () {
-                    $.lNotify('add', 'Успешно сохранили', 'success');
-                });
-                $('#btn_error').click(function () {
-                    $.lNotify('add', 'Ошибка сохранения', 'error');
-                });
-            });
-        </script>
         <script src="jquery.lnotify.js"></script>
+        <script>
+            if (window.jQuery) {
+                $(function () {
+                    $.lNotify({
+                        interval: 4000,
+                        animation: 'slide',
+                        position: 'bottomRight'
+                    });
+
+                    $('#btn_text').click(function () {
+                        $.lNotify('add', 'Lorem Ipsum is simply dummy text of the printing and typesetting <b>Ipsum</b> industry. <a href="#">Lorem  has been the industry.</a>', 'text');
+                    });
+
+                    $('#btn_success').click(function () {
+                        $.lNotify('add', 'Успешно сохранили', 'success');
+                    });
+                    $('#btn_error').click(function () {
+                        $.lNotify('add', 'Ошибка сохранения', 'error');
+                    });
+                });
+            } else {
+                console.log("--Подключите jQeury");
+            }
+        </script>
     </body>
 </html>
